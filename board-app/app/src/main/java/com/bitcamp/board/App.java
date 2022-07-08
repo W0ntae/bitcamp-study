@@ -18,7 +18,7 @@ public class App {
       System.out.println("메뉴:");
       System.out.println("  1:게시글 목록");
       System.out.println("  2:게시글 상세보기");
-      System.out.print("\n메뉴를 선택하세요[1..2] ");
+      System.out.print("\n메뉴를 선택하세요[1..2](0: 종료) ");
     
       int menuNo = keyboardInput.nextInt();
       keyboardInput.nextLine(); //입력한 숫자 뒤에 남아 있는 줄바꿈 코드 제거
