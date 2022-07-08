@@ -61,5 +61,6 @@ public class App {
       }
     } //while
     System.out.println("안녕히 가세요.");
+    keyboardInput.close();
   }
 }
