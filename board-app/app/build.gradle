@@ -1,5 +1,6 @@
 plugins {
     id 'application'
+    id 'eclipse'
 }
 
 repositories {
@@ -27,4 +28,16 @@ tasks.withType(JavaCompile) {
 
     // 자바 클래스를 실행시킬 JVM의 최소 버전
     targetCompatibility = '11'
+}
+
+// eclipse 프로젝트 이름을 설정하기
+eclipse {
+    project {
+        name = "board-app"
+    }
+    jdt {
+      sourceCompatibility = 11
+      targetCompatibility = 11
+      javaRuntimeName = "JavaSE-11"
+    }
 }
