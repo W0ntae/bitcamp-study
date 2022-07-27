@@ -10,6 +10,7 @@ public class Exam0220 {
   // - 코드 재사용성이 높아진다.
   // 
   static class Calculator {
+
     static int plus(int a, int b) {
       return a + b;
     }
