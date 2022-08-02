@@ -57,6 +57,11 @@ public class Test12 {
 
   static boolean isInsideTheCircle(int xa, int ya, int xc, int yc, int rc) {
     // 이 메서드를 완성하시오!
+    double csquared = (xa * xa) + (ya * ya);
+    double c = Math.sqrt(csquared);
+    if (c < rc) {
+      return true;
+    }
     return false;
   }
 }
