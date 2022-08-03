@@ -1,20 +1,18 @@
 package com.bitcamp.board.dao;
 
 import com.bitcamp.board.domain.Member;
-import com.bitcamp.util.ObjectList;
+import com.bitcamp.util.LinkedList;
+import com.bitcamp.util.List;
 
 // 회원 목록을 관리하는 역할
 //
 public class MemberDao {
 
-  // MemberDao 가 사용할 의존 객체를 선언한다.
-  ObjectList list = new ObjectList();
+  // MemberDao는 list 규격에 맞춰 생산한 객체를 사용할 것이다.
+  // => ObjectList 클래스는 List 규격에 맞춰 메서드를 정의한 클래스다.
+  // => 따라서 List 레퍼런스 변수에 그 주소를 저장 할 수 있다.
+  List list = new LinkedList();
 
-  // ObjectList를 상속 받지 않기 때문에 
-  // 목록에 데이터를 추가하고 싶다면 
-  // MemberDao 클래스에 해당 메서드를 직접 정의해야 한다.
-  // 물론, 실제 작업은 ObjectList 가 할 것이다.
-  //
   public void insert(Member member) {
     list.add(member);
   }
@@ -36,7 +34,7 @@ public class MemberDao {
     for (int i = 0; i < list.size(); i++) {
       Member member = (Member) list.get(i);
       if (member.email.equals(email)) {
-        return list.remove(i);
+        return list.remove(i) != null;
       }
     }
     return false;

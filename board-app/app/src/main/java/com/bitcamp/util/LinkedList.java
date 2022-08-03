@@ -1,12 +1,6 @@
 package com.bitcamp.util;
 
-/**
- * Node를 이용해 값을 목록을 관리하는 일을 한다.
- * 
- * @author bitcamp
- *
- */
-public class LinkedList {
+public class LinkedList implements List{
 
   private Node head; // 첫 노드의 주소를 저장
   private Node tail; // 마지막 노드의 주소를 저장
@@ -16,7 +10,8 @@ public class LinkedList {
    * 파라미터로 주어진 값을 노드에 담아 리스트 끝에 연결한다.
    * @param value
    */
-  public void append(Object value) {
+  @Override
+  public void add(Object value) {
     // Node 생성 후 값을 저장한다.
     Node node = new Node(value);
 
@@ -36,7 +31,8 @@ public class LinkedList {
     tail = node; // 새 노드를 끝 노드로 만든다.
   }
 
-  public Object retrieve(int index) {
+  @Override
+  public Object get(int index) {
 
     // 인덱스의 유효 여부 검사
     if (index < 0 || index >= size) {
@@ -55,7 +51,8 @@ public class LinkedList {
     return cursor.value;
   }
 
-  public Object delete(int index) {
+  @Override
+  public Object remove(int index) {
 
     // 인덱스의 유효 여부 검사
     if (index < 0 || index >= size) {
@@ -108,11 +105,13 @@ public class LinkedList {
     return deleted; // 메서드를 리턴할 때 삭제된 값을 호출자에게 전달한다.
   }
 
-  public int length() {
+  @Override
+  public int size() {
     return size;
   }
 
-  public Object[] getArray() {
+  @Override
+  public Object[] toArray() {
     // 값을 담을 배열을 준비
     Object[] arr = new Object[size];
 
